@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form KPR - Credit Scoring</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e466e;
+            border-left: 6px solid #ff6600;
+            padding-left: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .sub {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: #1e466e;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            width: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .col {
+            flex: 1;
+            min-width: 180px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+            color: #1e466e;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .half { flex: 0 0 48%; }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            background: #1e466e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ff6600;
+        }
+        .note {
+            font-size: 0.75rem;
+            color: gray;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>FORMULIR KREDIT PEMILIKAN RUMAH (KPR)</h1>
+    <div class="sub">Versi Credit Scoring - novitaindar90@gmail.com | * wajib diisi</div>
+
+    <form id="kprForm">
+        <!-- DATA PEMOHON -->
+        <fieldset>
+            <legend>👤 DATA PEMOHON UTAMA</legend>
+            <div class="row">
+                <div class="col"><label>Nama lengkap (KTP)*</label><input type="text" placeholder="Contoh: Budi Santoso"></div>
+                <div class="col"><label>Tempat/Tgl lahir</label><input type="text" placeholder="Jakarta, 12/05/1990"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>No. KTP</label><input type="text" placeholder="16 digit"></div>
+                <div class="col"><label>NPWP</label><input type="text" placeholder="12 digit"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Pendidikan terakhir</label>
+                    <select><option>SMA</option><option>Diploma</option><option>S1</option><option>S2/S3</option></select>
+                </div>
+                <div class="col"><label>Status perkawinan</label>
+                    <select><option>Kawin</option><option>Belum Kawin</option><option>Cerai</option></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Alamat KTP</label><input type="text" placeholder="Jalan..."></div>
+                <div class="col"><label>Alamat sekarang (jika beda)</label><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Status rumah tinggal</label>
+                    <select><option>Milik sendiri</option><option>Kontrak</option><option>Keluarga</option><option>Dinas</option></select>
+                </div>
+                <div class="col"><label>Lama tinggal (thn)</label><input type="number" min="0"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>No. HP</label><input type="tel" placeholder="0812xxxx"></div>
+                <div class="col"><label>Email</label><input type="email" placeholder="email@domain.com"></div>
+            </div>
+        </fieldset>
+
+        <!-- PEKERJAAN & PENGHASILAN -->
+        <fieldset>
+            <legend>💼 PEKERJAAN & PENGHASILAN</legend>
+            <div class="row">
+                <div class="col"><label>Status pekerjaan</label>
+                    <select><option>Karyawan tetap</option><option>Wiraswasta</option><option>Profesional</option><option>PNS/BUMN</option></select>
+                </div>
+                <div class="col"><label>Nama perusahaan</label><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Lama bekerja (tahun)</label><input type="number" step="0.5"></div>
+                <div class="col"><label>Jabatan</label><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Penghasilan bersih per bulan (Rp)</label><input type="number" placeholder="0"></div>
+                <div class="col"><label>Penghasilan tambahan (Rp)</label><input type="number" placeholder="0"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Pengeluaran rutin per bulan (Rp)</label><input type="number" placeholder="0"></div>
+                <div class="col"><label>Angsuran lain (kartu kredit, dll)</label><input type="number" placeholder="0"></div>
+            </div>
+        </fieldset>
+
+        <!-- DATA PASANGAN (jika ada) -->
+        <fieldset>
+            <legend>👫 DATA PASANGAN (jika menggabung penghasilan)</legend>
+            <div class="row">
+                <div class="col"><label>Nama pasangan</label><input type="text"></div>
+                <div class="col"><label>Pekerjaan</label><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Penghasilan pasangan (Rp)</label><input type="number"></div>
+                <div class="col"><label>No. HP pasangan</label><input type="tel"></div>
+            </div>
+        </fieldset>
+
+        <!-- DATA PINJAMAN & AGUNAN -->
+        <fieldset>
+            <legend>🏠 DATA PINJAMAN & AGUNAN</legend>
+            <div class="row">
+                <div class="col"><label>Tujuan pinjaman</label>
+                    <select><option>Beli rumah baru</option><option>Beli rumah second</option><option>Refinancing</option><option>Renovasi</option></select>
+                </div>
+                <div class="col"><label>Jumlah pinjaman (Rp)</label><input type="number" placeholder="Harga rumah - DP"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Harga agunan (nilai properti)</label><input type="number" placeholder="Rp"></div>
+                <div class="col"><label>Tenor (tahun)</label>
+                    <select><option>5</option><option>10</option><option>15</option><option>20</option><option>25</option></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Alamat properti (jaminan)</label><input type="text"></div>
+                <div class="col"><label>Luas tanah/bangunan (m²)</label><input type="text" placeholder="contoh: 120/90"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>Status sertifikat</label>
+                    <select><option>SHM</option><option>SHGB</option><option>AJB</option></select>
+                </div>
+                <div class="col"><label>No. Sertifikat</label><input type="text"></div>
+            </div>
+        </fieldset>
+
+        <!-- Tombol aksi -->
+        <div class="btn-group">
+            <button type="reset">Reset Form</button>
+            <button type="button" id="simulateBtn">Hitung Skor Kredit (Demo)</button>
+        </div>
+        <div class="note">
+            * Form ini untuk simulasi credit scoring KPR. Hasil skoring akan muncul di konsol browser (F12) sebagai contoh. 
+            Dalam tugas akhir, kalian akan mengintegrasikan ke Excel dengan bobot & scoring.
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('simulateBtn').addEventListener('click', function() {
+        // ini hanya contoh demo sederhana untuk meniru skoring
+        let penghasilan = parseFloat(document.querySelector('input[placeholder="0"]')?.value) || 0;
+        let pinjaman = parseFloat(document.querySelector('input[placeholder="Harga rumah - DP"]')?.value) || 0;
+        let properti = parseFloat(document.querySelector('input[placeholder="Rp"]')?.value) || 0;
+        let statusKerja = document.querySelector('select:has(option[selected])')?.value || "Karyawan tetap";
+
+        let skor = 300;
+        if (penghasilan > 10000000) skor += 50;
+        else if (penghasilan > 5000000) skor += 25;
+        if (pinjaman / properti < 0.8) skor += 40;  // LTV bagus
+        if (statusKerja === "PNS/BUMN") skor += 30;
+        else if (statusKerja === "Karyawan tetap") skor += 15;
+
+        let keputusan = skor > 400 ? "DITERIMA" : "DITOLAK (skor rendah)";
+        alert(`🏦 Skor Kredit Simulasi: ${skor}\nKeputusan: ${keputusan}\n(Limit kredit sementara: Rp ${(properti * 0.85).toLocaleString()} )`);
+    });
+</script>
+</body>
+</html>
